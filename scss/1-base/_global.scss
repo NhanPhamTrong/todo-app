@@ -1,0 +1,39 @@
+body {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+
+    h1, p, ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+body.dark {
+    background-color: $dark-background;
+    background-image: url("../images/bg-desktop-dark.jpg");
+}
+
+body.light {
+    background-color: $light-background;
+    background-image: url("../images/bg-desktop-light.jpg");
+}
+
+@media only screen and (max-width: $tablet) {
+    body {
+        font-size: 14px;
+    }
+    
+    body.dark {
+        background-image: url("../images/bg-mobile-dark.jpg");
+    }
+    
+    body.light {
+        background-image: url("../images/bg-mobile-light.jpg");
+    }
+}

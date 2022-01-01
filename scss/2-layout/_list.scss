@@ -1,0 +1,282 @@
+main {
+    margin: 0 auto;
+    width: 540px;
+
+    .add-item {
+        @extend item-style;
+        margin-bottom: 23px;
+        border-radius: 5px;
+
+        button {
+            background-color: transparent;
+            cursor: default !important;
+        }
+
+        input {
+            background-color: transparent;
+            border: none;
+            outline: none;
+        }
+    }
+
+    .list {
+        border-radius: 5px;
+
+        ul {
+            li {
+                list-style: none;
+
+                a {
+                    @extend item-style;
+                    position: relative;
+                    
+                    button.delete-task {
+                        height: 25px;
+                        width: 25px;
+                        background: url("../images/icon-cross.svg") no-repeat center;
+                        border: none;
+                        border-radius: 0;
+                        display: none;
+                        position: absolute;
+                        right: 5px;
+                    }
+                }
+
+                a:hover {
+                    button.delete-task {
+                        display: block;
+                    }
+                }
+
+                a.active {
+                    text-decoration: none;
+                    
+                    button.check {
+                        background-color: transparent;
+                    }
+                }
+
+                a.active:hover {
+                    button.check {
+                        border-radius: 50px;
+                        border: 2px solid transparent;
+                    }
+                }
+
+                a.completed {
+                    text-decoration: line-through;
+
+                    button.check {
+                        background-image: url("../images/icon-check.svg"), $check-background;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+
+        .list-footer {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            
+                button {
+                    background-color: transparent;
+                    border: none;
+                }
+    
+                button.chosen {
+                    color: $chosen-button !important;
+                }
+
+            #clear-completed:active {
+                color: $chosen-button;
+            }
+        }
+    }
+
+    .list-sort-mobile {
+        display: none;
+    }
+
+    p.note {
+        margin-top: 50px;
+        text-align: center;
+    }
+}
+
+main.dark {
+    .add-item {
+        background-color: $list-dark-background;
+
+        input {
+            color: $word-dark-color-1;
+        }
+
+        input::placeholder {
+            color: $word-dark-color-2;
+        }
+    }
+
+    .list {
+        background-color: $list-dark-background;
+        box-shadow: 0 10px 18px black;
+
+        ul {
+            li {
+                background-color: $list-dark-background;
+                border: 1px solid $item-dark-border;
+
+                a.active {
+                    color: $word-dark-color-1;
+                }
+
+                a.active:hover {
+                    button.check {
+                        background:
+                            linear-gradient($list-dark-background, $list-dark-background) padding-box,
+                            $check-background border-box;
+                    }
+                }
+
+                a.completed {
+                    color: $word-dark-color-3;
+                }
+            }
+        }
+
+        .list-footer {
+            color: $word-dark-color-2;
+
+            button {
+                color: $word-dark-color-2;
+            }
+
+            button:hover {
+                color: $word-dark-color-1;
+            }
+        }
+    }
+
+    p.note {
+        color: $word-dark-color-2;
+    }
+}
+
+main.light {
+    .add-item {
+        background-color: $list-light-background;
+
+        input {
+            color: $word-light-color-1;
+        }
+
+        input::placeholder {
+            color: $word-light-color-2;
+        }
+    }
+
+    .list {
+        background-color: $list-light-background;
+        box-shadow: 0 10px 18px gray;
+
+        ul {
+            li {
+                background-color: $list-light-background;
+                border: 1px solid $item-light-border;
+
+                a.active {
+                    color: $word-light-color-1;
+                }
+
+                a.active:hover {
+                    button.check {
+                        background:
+                            linear-gradient($list-light-background, $list-light-background) padding-box,
+                            $check-background border-box;
+                    }
+                }
+
+                a.completed {
+                    color: $word-light-color-3;
+                }
+            }
+        }
+
+        .list-footer {
+            color: $word-light-color-2;
+
+            button {
+                color: $word-light-color-2;
+            }
+
+            button:hover {
+                color: $word-light-color-1;
+            }
+        }
+    }
+
+    p.note {
+        color: $word-light-color-2;
+    }
+}
+
+@media only screen and (max-width: $tablet) {
+    main {
+        width: 325px;
+
+        .list {
+            .list-footer {
+                .list-sort-desktop {
+                    display: none;
+                }
+            }
+        }
+
+        .list-sort-mobile {
+            margin-top: 1rem;
+            padding: 15px 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+
+            button {
+                margin: 0 7px;
+                background-color: transparent;
+                border: none;
+            }
+
+            button.chosen {
+                color: $chosen-button !important;
+            }
+        }
+    }
+
+    main.dark {
+        .list-sort-mobile {
+            background-color: $list-dark-background;
+
+            button {
+                color: $word-dark-color-2;
+            }
+
+            button:hover {
+                color: $word-dark-color-1;
+            }
+        }
+    }
+
+    main.light {
+        .list-sort-mobile {
+            background-color: $list-light-background;
+
+            button {
+                color: $word-light-color-2;
+            }
+
+            button:hover {
+                color: $word-light-color-1;
+            }
+        }
+    }
+}

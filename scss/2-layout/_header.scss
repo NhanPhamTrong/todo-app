@@ -1,0 +1,38 @@
+header {
+    margin: 75px auto 47px;
+    width: 540px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+        color: $header-word;
+        font-weight: 700;
+        letter-spacing: 1rem;
+        text-transform: uppercase;
+    }
+
+    button {
+        width: 35px;
+        height: 35px;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: none;
+    }
+
+    button.dark {
+        background-image: url("../images/icon-sun.svg");
+    }
+        
+    button.light {
+        background-image: url("../images/icon-moon.svg");
+    }
+}
+
+@media only screen and (max-width: $tablet) {
+    header {
+        margin: 40px auto 27px;
+        width: 325px;
+    }
+}
