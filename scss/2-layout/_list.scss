@@ -24,53 +24,49 @@ main {
 
         ul {
             li {
+                @extend item-style;
+                cursor: pointer;
                 list-style: none;
-
-                a {
-                    @extend item-style;
-                    position: relative;
+                position: relative;
                     
-                    button.delete-task {
-                        height: 25px;
-                        width: 25px;
-                        background: url("../images/icon-cross.svg") no-repeat center;
-                        border: none;
-                        border-radius: 0;
-                        display: none;
-                        position: absolute;
-                        right: 5px;
-                    }
+                button.delete-task {
+                    height: 25px;
+                    width: 25px;
+                    background: url("../images/icon-cross.svg") no-repeat center;
+                    border: none;
+                    border-radius: 0;
+                    display: none;
+                    position: absolute;
+                    right: 5px;
                 }
+            }
 
-                a:hover {
-                    button.delete-task {
-                        display: block;
-                    }
+            li:hover {
+                button.delete-task {
+                    display: block;
                 }
+            }
 
-                a.active {
-                    text-decoration: none;
-                    
-                    .check {
-                        background-color: transparent;
-                    }
+            li.active {
+                .check {
+                    background-color: transparent;
                 }
+            }
 
-                a.active:hover {
-                    .check {
-                        border-radius: 50px;
-                        border: 2px solid transparent;
-                    }
+            li.active:hover {
+                .check {
+                    border-radius: 50px;
+                    border: 2px solid transparent;
                 }
+            }
 
-                a.completed {
-                    text-decoration: line-through;
+            li.completed {
+                text-decoration: line-through;
 
-                    .check {
-                        background-image: url("../images/icon-check.svg"), $check-background;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                    }
+                .check {
+                    background-image: url("../images/icon-check.svg"), $check-background;
+                    background-position: center;
+                    background-repeat: no-repeat;
                 }
             }
         }
@@ -126,22 +122,22 @@ main.dark {
             li {
                 background-color: $list-dark-background;
                 border: 1px solid $item-dark-border;
+            }
 
-                a.active {
-                    color: $word-dark-color-1;
-                }
+            li.active {
+                color: $word-dark-color-1;
+            }
 
-                a.active:hover {
-                    .check {
-                        background:
-                            linear-gradient($list-dark-background, $list-dark-background) padding-box,
-                            $check-background border-box;
-                    }
+            li.active:hover {
+                .check {
+                    background:
+                        linear-gradient($list-dark-background, $list-dark-background) padding-box,
+                        $check-background border-box;
                 }
+            }
 
-                a.completed {
-                    color: $word-dark-color-3;
-                }
+            li.completed {
+                color: $word-dark-color-3;
             }
         }
 
@@ -184,22 +180,22 @@ main.light {
             li {
                 background-color: $list-light-background;
                 border: 1px solid $item-light-border;
+            }
 
-                a.active {
-                    color: $word-light-color-1;
-                }
+            li.active {
+                color: $word-light-color-1;
+            }
 
-                a.active:hover {
-                    .check {
-                        background:
-                            linear-gradient($list-light-background, $list-light-background) padding-box,
-                            $check-background border-box;
-                    }
+            li.active:hover {
+                .check {
+                    background:
+                        linear-gradient($list-light-background, $list-light-background) padding-box,
+                        $check-background border-box;
                 }
+            }
 
-                a.completed {
-                    color: $word-light-color-3;
-                }
+            li.completed {
+                color: $word-light-color-3;
             }
         }
 
