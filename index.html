@@ -31,73 +31,73 @@
   
   <header>
     <h1>Todo</h1>
-    <button class="dark" type="button" onclick="ChangeTheme()"></button>
+    <button class="dark" type="button" aria-label="Change theme button" onclick="ChangeTheme()"></button>
   </header>
 
   <main class="dark">
     <div class="add-item">
-      <button type="button"></button>
+      <div class="check"></div>
       <input type="text" placeholder="Create a new todo...">
     </div>
     <div class="list">
       <ul>
         <li>
           <a class="completed" href="#">
-            <button class="check" type="button"></button>
+            <div class="check"></div>
             <p class="task">Complete online JavaScript course</p>
-            <button class="delete-task" type="button"></button>
+            <button class="delete-task" aria-label="Delete task" type="button"></button>
           </a>
         </li>
         <li>
           <a class="active" href="#">
-            <button class="check" type="button"></button>
+            <div class="check"></div>
             <p class="task">Jog around the park 3x</p>
-            <button class="delete-task" type="button"></button>
+            <button class="delete-task" aria-label="Delete task" type="button"></button>
           </a>
         </li>
         <li>
           <a class="active" href="#">
-            <button class="check" type="button"></button>
+            <div class="check"></div>
             <p class="task">10 minutes meditation</p>
-            <button class="delete-task" type="button"></button>
+            <button class="delete-task" aria-label="Delete task" type="button"></button>
           </a>
         </li>
         <li>
           <a class="active" href="#">
-            <button class="check" type="button"></button>
+            <div class="check"></div>
             <p class="task">Read for 1 hour</p>
-            <button class="delete-task" type="button"></button>
+            <button class="delete-task" aria-label="Delete task" type="button"></button>
           </a>
         </li>
         <li>
           <a class="active" href="#">
-            <button class="check" type="button"></button>
+            <div class="check"></div>
             <p class="task">Pick up groceries</p>
-            <button class="delete-task" type="button"></button>
+            <button class="delete-task" aria-label="Delete task" type="button"></button>
           </a>
         </li>
         <li>
           <a class="active" href="#">
-            <button class="check" type="button"></button>
+            <div class="check"></div>
             <p class="task">Complete Todo App on Frontend Mentor</p>
-            <button class="delete-task" type="button"></button>
+            <button class="delete-task" aria-label="Delete task" type="button"></button>
           </a>
         </li>
       </ul>
       <div class="list-footer">
         <p></p>
         <div class="list-sort list-sort-desktop">
-          <button class="all-task chosen" type="button" onclick="GetAllTask()">All</button>
-          <button class="active-task" type="button" onclick="SortActiveTask()">Active</button>
-          <button class="completed-task" type="button" onclick="SortCompletedTask()">Completed</button>
+          <button class="all-task chosen" type="button" aria-label="Get all tasks" onclick="GetAllTask()">All</button>
+          <button class="active-task" type="button"  aria-label="Get active tasks" onclick="SortActiveTask()">Active</button>
+          <button class="completed-task" type="button"  aria-label="Get completed tasks" onclick="SortCompletedTask()">Completed</button>
         </div>
         <button id="clear-completed" type="button" onclick="DeleteCompleteTask()">Clear Completed</button>
       </div>
     </div>
     <div class="list-sort list-sort-mobile">
-      <button class="all-task chosen" type="button" onclick="GetAllTask()">All</button>
-      <button class="active-task" type="button" onclick="SortActiveTask()">Active</button>
-      <button class="completed-task" type="button" onclick="SortCompletedTask()">Completed</button>
+      <button class="all-task chosen" type="button"  aria-label="Get all tasks" onclick="GetAllTask()">All</button>
+      <button class="active-task" type="button"  aria-label="Get active tasks" onclick="SortActiveTask()">Active</button>
+      <button class="completed-task" type="button"  aria-label="Get completed tasks" onclick="SortCompletedTask()">Completed</button>
     </div>
     <p class="note">Drag and drop to reorder list</p>
   </main>
