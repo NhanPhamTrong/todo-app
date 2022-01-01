@@ -1,6 +1,6 @@
 var deleteTaskButton = $(".delete-task");
 const sortButton = $(".list-sort button");
-var task = $("ul li a");
+var task = $("ul li");
 const taskCount = $(".list-footer p");
 const taskList = $("ul");
 const taskInput = $("main .add-item input");
@@ -21,7 +21,7 @@ function ChangeTheme() {
 
 function CountActiveTask() {
     var count = 0;
-    task = $("ul li a");
+    task = $("ul li");
     for (let i = 0; i < task.length; i++) {
         if (task.eq(i).hasClass("active")) {
             count++;
@@ -41,16 +41,14 @@ function ChosenTask(a) {
 
 function AddTask(event) {
     const taskHTML = "" + 
-    "<li>" +
-    "  <a class='active' href='#'>" + 
-    "    <button class='check' type='button'></button>" +
-    "    <p class='task'>" + taskInput.val() + "</p>" +
-    "    <button class='delete-task' type='button'></button>" +
-    "  </a>" +
+    "<li class='active'>" +
+    "  <div class='check'></div>" +
+    "  <p class='task'>" + taskInput.val() + "</p>" +
+    "  <button class='delete-task' aria-label='Delete task' type='button'></button>" +
     "</li>";
     if (event.which == 13) {
         taskList.html(taskList.html() + taskHTML);
-        task = $("ul li a");
+        task = $("ul li");
         deleteTaskButton = $(".delete-task");
     }
 
@@ -74,7 +72,7 @@ function GetAllTask() {
     for (let i = 0; i < task.length; i++) {
         task.eq(i).closest("li").show();
     }
-    task = $("ul li a");
+    task = $("ul li");
 }
 
 function SortActiveTask() {
